@@ -1,7 +1,7 @@
     
 $(document).ready(function(){
-  var $body = $('body');
-  //$body.html('');
+  var $TweetBox = $('.TweetBox');
+  //$TweetBox.html('');
 
   var index = streams.home.length - 1,
       lastIndex = index;
@@ -11,7 +11,7 @@ $(document).ready(function(){
     var tweet = streams.home[index];
     var $tweet = $('<div></div>');
     $tweet.text('@' + tweet.user + ': ' + tweet.message);
-    $tweet.appendTo($body);
+    $tweet.appendTo($TweetBox);
     index -= 1;
   }
 
@@ -27,7 +27,7 @@ $(document).ready(function(){
       console.log(tweet);
       var $tweet = $('<div></div>');
       $tweet.text('@' + tweet.user + ': ' + tweet.message);
-      $tweet.appendTo($body);
+      $tweet.prependTo($TweetBox);
       refreshIndex -= 1;
     }
   };
