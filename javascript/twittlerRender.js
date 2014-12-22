@@ -1,15 +1,24 @@
     
 $(document).ready(function(){
   var $TweetBox = $('.TweetBox'),
-      //This function creates and formats the <div> rendered in html for each tweet.  
+
       CreateTweetMsg = function(tweet){
-        var $tweet = $('<div></div>');
-        $tweet.text('@' + tweet.user + ': ' + tweet.message);
+        //This function creates and formats the <div> rendered in html for each tweet.  
+        var $tweet = $('<div class = "tweet"></div>'),
+            $user =  $('<div class = "user"></div>'),
+            $message = $('<div class = "message"></div>'),
+            $createdAt = $('<div class = "createdAt"></div>');
+
+        $user.text('@' + tweet.user);
+        $message.text(tweet.message);
+        $createdAt.text('created at ' + tweet.created_at);
+        $tweet.append($user).append($message).append($createdAt);
+        //$tweet.text('@' + tweet.user + ': ' + tweet.message);
 
         return $tweet;
-
       };
 
+  //initialization that renders all existing tweets in 'streams' object. 
   var index = streams.home.length - 1,
       lastIndex = index;
 
@@ -21,8 +30,9 @@ $(document).ready(function(){
     index -= 1;
   }
 
-  //function that updates the page with new tweets. 
+
   var refreshTweets = function(){
+    //function that updates the .TweetBox with new tweets. 
     var prevIndex = lastIndex,
         refreshIndex = streams.home.length - 1;
 
