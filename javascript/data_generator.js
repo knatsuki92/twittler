@@ -44,17 +44,20 @@ var generateRandomTweet = function(){
   tweet.message = randomMessage();
   tweet.created_at = new Date();
   addTweet(tweet);
+  //KN: console.log(tweet);
 };
 
 for(var i = 0; i < 10; i++){
   generateRandomTweet();
 }
 
+//KN: This function generates a random tweet every 1.5sec. It's then pushed into the 'streams' object.
 var scheduleNextTweet = function(){
   generateRandomTweet();
   setTimeout(scheduleNextTweet, Math.random() * 1500);
 };
 scheduleNextTweet();
+console.log(streams);
 
 // utility function for letting students add "write a tweet" functionality
 // (note: not used by the rest of this file.)

@@ -1,27 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="jquery.js"></script>
-    <script src="data_generator.js"></script>
+    <script src="javascript/jquery.js"></script>
+    <script src="javascript/data_generator.js"></script>
+    <!--twittlerRender.js renders the view for the generated tweets -->
+    <script src="javascript/twittlerRender.js"></script>
   </head>
   <body>
-    <script>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
-
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
-
-      });
-
-    </script>
+    <button id = 'refresh' > refresh </button>     
   </body>
 </html>
