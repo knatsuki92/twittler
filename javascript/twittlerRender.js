@@ -43,26 +43,6 @@ $(document).ready(function(){
     }
   };
 
-
-  var refreshTweets = function(){
-    //function that updates the .TweetBox with new tweets. 
-    var prevIndex = LastIndex,
-        refreshIndex = streams.home.length - 1;
-
-    LastIndex = refreshIndex;
-
-    while(refreshIndex > prevIndex){
-      var tweet = streams.home[refreshIndex];
-      console.log(tweet);
-      var $tweet = createTweetMsg(tweet);
-      $tweet.prependTo($TweetBox);
-      refreshIndex -= 1;
-    }
-
-    createFilterLinks();
-  };
-
-
    var filterByUser = function(event){
   //This function filters the tweets by user　in .TweetBox.
    var user = event.data.user;
@@ -91,7 +71,6 @@ $(document).ready(function(){
 
 
   displayAllTweets();
-  $('#refresh').on('click', refreshTweets);
   $('#showAll').on('click', displayAllTweets);
 
 
