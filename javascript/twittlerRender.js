@@ -24,22 +24,6 @@ $(document).ready(function(){
         return $tweet;
   };
 
-  var filterByUser = function(user){
-  //This function filters the tweets by user.
-    $TweetBox.html('<div class = "TweetBox"></div>');
-
-    var index = streams.users[user].length - 1;
-
-    while(index >= 0){
-      var tweet = streams.users[user][index],
-        $tweet = createTweetMsg(tweet);
-
-      $tweet.appendTo($TweetBox);
-      index -= 1;
-
-    }
-  };
-
   var DisplayAllTweets = function(){
   //initialization that renders all existing tweets in 'streams' object. 
     var index = streams.home.length - 1;
@@ -72,8 +56,42 @@ $(document).ready(function(){
     }
   };
 
+
+   var filterByUser = function(event){
+  //This function filters the tweets by user　in .TweetBox.
+   var user = event.data.user;
+
+   $TweetBox.html('<div class = "TweetBox"></div>');
+
+    var index = streams.users[user].length - 1;
+
+    while(index >= 0){
+      var tweet = streams.users[user][index],
+        $tweet = createTweetMsg(tweet);
+
+      $tweet.appendTo($TweetBox);
+      index -= 1;
+
+    }
+  };
+
+  var createFilterLinks = function(){
+    for(var user in streams.users){
+    $('a.'+ user).on('click', {user: user}, filterByUser);
+    }
+  };
+
   DisplayAllTweets();
   $('#refresh').on('click', refreshTweets);
 
+  createFilterLinks();
+/*
+
+  for(var user in streams.users){
+    $('a.'+ user).on('click', function(user){
+        filterByUser(user);
+    });
+  }
+*/
 
 });
