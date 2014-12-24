@@ -47,8 +47,6 @@ $(document).ready(function(){
   //This function filters the tweets by user　in .TweetBox.
    var user = event.data.user;
 
-   console.log('filterByUser invoked');
-
    $TweetBox.empty();
 
     var index = streams.users[user].length - 1;
