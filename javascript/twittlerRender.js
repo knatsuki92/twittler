@@ -15,7 +15,7 @@ $(document).ready(function(){
                             + tweet.created_at.getMonth() + '/' + tweet.created_at.getDate() + '/' + tweet.created_at.getFullYear();
 
         //render to html view
-        $user.html('<a href = # class = ' + tweet.user + '> @' + tweet.user + '</a>');
+        $user.html('<button class = ' + tweet.user + '> @' + tweet.user + '</button>');
         $message.text(tweet.message);
         $createdAt.text('created at ' + dateFormatted);
 
@@ -24,8 +24,10 @@ $(document).ready(function(){
         return $tweet;
   };
 
-  var DisplayAllTweets = function(){
+  var displayAllTweets = function(){
   //initialization that renders all existing tweets in 'streams' object. 
+    $TweetBox.empty();
+
     var index = streams.home.length - 1;
     
     LastIndex = index;
@@ -36,6 +38,8 @@ $(document).ready(function(){
       
       $tweet.appendTo($TweetBox);
       index -= 1;
+
+    createFilterLinks();
     }
   };
 
@@ -54,6 +58,8 @@ $(document).ready(function(){
       $tweet.prependTo($TweetBox);
       refreshIndex -= 1;
     }
+
+    createFilterLinks();
   };
 
 
@@ -61,7 +67,9 @@ $(document).ready(function(){
   //This function filters the tweets by user　in .TweetBox.
    var user = event.data.user;
 
-   $TweetBox.html('<div class = "TweetBox"></div>');
+   console.log('filterByUser invoked');
+
+   $TweetBox.empty();
 
     var index = streams.users[user].length - 1;
 
@@ -77,21 +85,14 @@ $(document).ready(function(){
 
   var createFilterLinks = function(){
     for(var user in streams.users){
-    $('a.'+ user).on('click', {user: user}, filterByUser);
+    $('button.'+ user).on('click', {user: user}, filterByUser);
     }
   };
 
-  DisplayAllTweets();
+
+  displayAllTweets();
   $('#refresh').on('click', refreshTweets);
+  $('#showAll').on('click', displayAllTweets);
 
-  createFilterLinks();
-/*
-
-  for(var user in streams.users){
-    $('a.'+ user).on('click', function(user){
-        filterByUser(user);
-    });
-  }
-*/
 
 });
