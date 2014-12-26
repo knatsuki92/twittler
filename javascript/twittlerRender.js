@@ -76,15 +76,24 @@ $(document).ready(function(){
   $('form').on('submit', function(event){
     event.preventDefault(); //This prevents the default form-submission functionality.
    // alert('it works!');
-    var $NewtwittlerName = $('#twittlerName'),
-        $NewtwittlerComm = $('twittlerComment');
+    var $newTwittlerName = $('#twittlerName'),
+        $newTwittlerComm = $('#twittlerComment');
     //the constructor for 'tweet' object.
     var newTweet = {};
-        newTweet.user = $NewtwittlerName.val();
-        newTweet.message = $NewtwittlerComm.val();
+        newTweet.user = $newTwittlerName.val();
+        newTweet.message = $newTwittlerComm.val();
         newTweet.created_at = new Date();
 
-   // console.log($NewtwittlerName.val());
+    //creates a new array if it's a new user.
+    if(streams.users[newTweet.user] === undefined){
+      streams.users[newTweet.user] = [];
+    }
+    addTweet(newTweet);
+    displayAllTweets();
+
+    //clear form once it's submitted.
+    $newTwittlerName.val("");
+    $newTwittlerComm.val("");
   });
 
 /*
