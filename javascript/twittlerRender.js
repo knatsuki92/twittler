@@ -72,4 +72,26 @@ $(document).ready(function(){
   $('#showAll').on('click', displayAllTweets);
 
 
+  //New Tweet
+  $('form').on('submit', function(event){
+    event.preventDefault(); //This prevents the default form-submission functionality.
+   // alert('it works!');
+    var $NewtwittlerName = $('#twittlerName'),
+        $NewtwittlerComm = $('twittlerComment');
+    //the constructor for 'tweet' object.
+    var newTweet = {};
+        newTweet.user = $NewtwittlerName.val();
+        newTweet.message = $NewtwittlerComm.val();
+        newTweet.created_at = new Date();
+
+   // console.log($NewtwittlerName.val());
+  });
+
+/*
+  $('form').submit( function(event){
+    alert('it works!');
+    event.preventDefault;
+    console.log(event);
+  });
+*/
 });
