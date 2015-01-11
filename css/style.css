@@ -1,0 +1,57 @@
+#title {
+	text-align: center;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#showAllButtonBox{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 600px;
+}
+
+#showAll{
+	width: 600px;
+	height: 40px;
+	font-size: 20px;
+}
+
+form {
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+}
+
+
+.TweetBox {
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+}
+
+.tweet {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: 2px solid #e1e8ed;
+}
+
+.message {
+	font-size: 26px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 300;
+	margin-top: 1px;
+	margin-bottom: 3px;
+	text-align: center;
+}
+
+button {
+	color: #226699;
+	font-size: 14px;
+}
+
+.createdAt {
+	text-align: right;
+	font-size: 14px;
+	color: #A9A9A9;
+}
+

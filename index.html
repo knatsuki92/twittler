@@ -5,17 +5,20 @@
     <script src="javascript/data_generator.js"></script>
     <!--twittlerRender.js renders the view for the generated tweets -->
     <script src="javascript/twittlerRender.js"></script>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <h1 id = "title">Twittler Newsfeed</h1>
     <form id = "submitNewTweet" action = "">
-      Twittler Handle:
+      Twittler Handle: <br>
       <input type="text" id = "twittlerName" value = ""> <br>
-      Comment:
+      Comment: <br>
       <input type="text" id = "twittlerComment" value = ""> <br>
       <input type="submit" value = "Submit"> <br><br>
     </form>
+    <div id = "showAllButtonBox">
     <button id = "showAll" >Update and Show All</button>       
+    </div>
     <div class = "TweetBox"></div>
   </body>
 </html>

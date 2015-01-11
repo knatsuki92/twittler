@@ -11,13 +11,13 @@ $(document).ready(function(){
             $createdAt = $('<div class = "createdAt"></div>');
 
         //format 'createdAt' date to be viewer-friendly
-        var dateFormatted = tweet.created_at.getHours() + ':' + tweet.created_at.getMinutes() + ' ' 
+        /*var dateFormatted = tweet.created_at.getHours() + ':' + tweet.created_at.getMinutes() + ' ' 
                             + tweet.created_at.getMonth() + '/' + tweet.created_at.getDate() + '/' + tweet.created_at.getFullYear();
-
+        */
         //render to html view
         $user.html('<button class = ' + tweet.user + '> @' + tweet.user + '</button>');
         $message.text(tweet.message);
-        $createdAt.text('created at ' + dateFormatted);
+        $createdAt.text('created at ' + tweet.created_at);
 
         $tweet.append($user).append($message).append($createdAt);
 
