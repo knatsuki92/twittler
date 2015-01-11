@@ -1,6 +1,20 @@
+body{
+	border: 2px solid #e1e8ed;
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+
 #title {
 	text-align: center;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: normal;
+	font-size: 3em;
+	color: #226699;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 #showAllButtonBox{
@@ -20,8 +34,52 @@ form {
 	margin-left: auto;
 	margin-right: auto;
 	width: 600px;
+	height: 100px;
 }
 
+#formbox1{
+	float: left;
+	margin-left: 10px;
+	height: 100px;
+	
+}
+
+#TweetYoSelf{
+	font-size: 20px;
+	height: 50px;
+	border-radius: 100px;
+	border: solid buttonface;
+	background-color: #f3f4f1;
+	color: #226699;
+	position: relative;
+	top:25px;
+
+}
+
+#formbox2{
+	float: left;
+	height: 100px;
+	width: 415px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#twittlerName{
+	height: 1.5em;
+	border: 1px solid buttonface;
+	border-radius: 5px;
+	color: #444747;
+}
+
+#twittlerComment{
+	width:100%;
+	height: 3em;
+	border: 1px solid buttonface;
+	border-radius: 10px;
+	color: #444747;
+}
 
 .TweetBox {
 	margin-left: auto;

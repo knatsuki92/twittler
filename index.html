@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <h1 id = "title">Twittler Newsfeed</h1>
+    <h1 id = "title">Twittler</h1>
     <form id = "submitNewTweet" action = "">
-      Twittler Handle: <br>
-      <input type="text" id = "twittlerName" value = ""> <br>
-      Comment: <br>
-      <input type="text" id = "twittlerComment" value = ""> <br>
-      <input type="submit" value = "Submit"> <br><br>
+    <div id =formwrapper>
+      <div id = formbox1>
+          <input id = TweetYoSelf type="submit" value = "Tweet yo self!">
+      </div>
+      <div id = formbox2>
+        Twittler Handle: <br>
+        <input type="text" id = "twittlerName" value = ""> <br>
+        Comment: <br>
+        <input type="text" id = "twittlerComment" value = "">
+      </div>
+    </div>
     </form>
     <div id = "showAllButtonBox">
     <button id = "showAll" >Update and Show All</button>       
